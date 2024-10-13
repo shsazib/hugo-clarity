@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+{{ with .Params.test }}
+<section>
+  <div>
+    <h1 style="color: aqua;">{{ .h1 }}</h1>
+    <img src="{{ .image }}" alt="img">
+  </div>
+</section>
+{{ end }}
+
+{{- partial "archive" . }}
+{{ end }}
