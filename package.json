@@ -2,10 +2,9 @@
   "name": "hugo-clarity",
   "version": "1.0.0",
   "description": "this is hugo project",
-  "main": "index.js",
   "scripts": {
     "dev": "hugo server",
-    "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic"
+    "build": "hugo --minify"
   },
   "license": "ISC"
 }
