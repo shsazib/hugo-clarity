@@ -492,8 +492,5 @@ function fileClosure(){
       }
     });
   })();
-
-  // add new code above this line
 }
-
 window.addEventListener(pageHasLoaded, fileClosure());
