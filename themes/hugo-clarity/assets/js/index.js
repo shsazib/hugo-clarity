@@ -497,3 +497,42 @@ function fileClosure(){
 }
 
 window.addEventListener(pageHasLoaded, fileClosure());
+
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  
+  // Hide all tab content
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Reset background color of tab buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = '#2d3748';
+  }
+
+  // Show the current tab content and highlight the clicked button
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.style.backgroundColor = '#4a5568';
+}
+
+// Set default open tab
+document.getElementsByClassName("tablink")[0].click();
+
+// Function to copy code to clipboard
+function copyCode(elementId) {
+  var codeElement = document.getElementById(elementId);
+  var codeText = codeElement.innerText.trim();
+
+  // Create a temporary textarea to copy the code
+  var tempTextArea = document.createElement("textarea");
+  tempTextArea.value = codeText;
+  document.body.appendChild(tempTextArea);
+  tempTextArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempTextArea);
+  
+  alert("Code copied to clipboard!");
+}

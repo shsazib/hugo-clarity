@@ -1,13 +1,84 @@
 {{ define "main" }}
 
-{{/*  {{ with .Params.test }}
-<section>
-  <div>
-    <h1 style="color: aqua;">{{ .h1 }}</h1>
-    <img src="{{ .image }}" alt="img">
+<div>
+  <div style="display: flex; background-color: #2d3748;">
+    <button class="tablink" style="flex-grow: 1; padding: 8px 16px; color: white; background-color: #2d3748; font-size: 17px; border: none; cursor: pointer;" 
+      onmouseover="this.style.backgroundColor='#4a5568';" 
+      onmouseout="this.style.backgroundColor='#2d3748';" 
+      onclick="openTab(event, 'Input')">Input</button>
+    <button class="tablink" style="flex-grow: 1; padding: 8px 16px; color: white; background-color: #2d3748; font-size: 17px; border: none; cursor: pointer;" 
+      onmouseover="this.style.backgroundColor='#4a5568';" 
+      onmouseout="this.style.backgroundColor='#2d3748';" 
+      onclick="openTab(event, 'Output')">Output</button>
   </div>
-</section>
-{{ end }}  */}}
+  
+  <div id="Input" class="tabcontent" style="display: none; padding: 16px; background-color: #f7fafc; border: 1px solid #cbd5e0;">
+    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 16px;">Input</h3>
+    <button onclick="copyCode('inputCode')" style="background-color: #4a5568; color: white; padding: 8px 12px; border: none; cursor: pointer; margin-bottom: 12px;">Copy Code</button>
+    <pre id="inputCode" style="background-color: #1a202c; color: #f7fafc; padding: 16px; border-radius: 4px;">
+      <code>
+  package main
+  
+  import (
+      "fmt"
+      "io/ioutil"
+      "net/http"
+  )
+  
+  func sendClassic() {
+      client := &http.Client{}
+  
+      req, err := http.NewRequest("GET", "https://api.example.com/v1/query", nil)
+      if err != nil {
+          fmt.Println(err)
+          return
+      }
+  
+      resp, err := client.Do(req)
+      if err != nil {
+          fmt.Println("Failure: ", err)
+          return
+      }
+      // more code here...
+      </code>
+    </pre>
+  </div>
+  
+  <div id="Output" class="tabcontent" style="display: none; padding: 16px; background-color: #f7fafc; border: 1px solid #cbd5e0;">
+    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 16px;">Output</h3>
+    <button onclick="copyCode('outputCode')" style="background-color: #4a5568; color: white; padding: 8px 12px; border: none; cursor: pointer; margin-bottom: 12px;">Copy Code</button>
+    <pre id="outputCode" style="background-color: #1a202c; color: #f7fafc; padding: 16px; border-radius: 4px;">
+      <code>
+  package main
+  
+  import (
+      "fmt"
+      "io/ioutil"
+      "net/http"
+  )
+  
+  func sendClassic() {
+      client := &http.Client{}
+  
+      req, err := http.NewRequest("GET", "https://api.example.com/v1/query", nil)
+      if err != nil {
+          fmt.Println(err)
+          return
+      }
+  
+      resp, err := client.Do(req)
+      if err != nil {
+          fmt.Println("Failure: ", err)
+          return
+      }
+      // more code here...
+      </code>
+    </pre>
+  </div>
+  
+  
+  
+</div>
 
 {{- partial "archive" . }}
 {{ end }}
