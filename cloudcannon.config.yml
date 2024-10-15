@@ -1,0 +1,40 @@
+collections_config:
+  config_default:
+    path: config/_default
+    name: Config Default
+    icon: chair_alt
+  content:
+    path: content
+    name: Content
+    icon: wysiwyg
+  i18n:
+    path: i18n
+    name: I18n
+    icon: iron
+  sass:
+    path: sass
+    name: Sass
+    icon: cases
+paths:
+  static: static
+  uploads: static/uploads
+timezone: Asia/Dhaka
+markdown:
+  engine: commonmark
+  options:
+    gfm: true
+    linkify: false
+    table: false
+    strikethrough: false
+    subscript: false
+    superscript: false
+    heading_ids: false
+    breaks: false
+    xhtml: false
+    attributes: false
+    typographer: false
+    treat_indentation_as_code: true
+_snippets_imports:
+  hugo:
+    exclude:
+      - hugo_instagram
