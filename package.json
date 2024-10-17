@@ -4,8 +4,7 @@
   "description": "this is hugo project",
   "scripts": {
     "dev": "hugo server",
-    "build": "hugo --minify",
-    "project-setup": "npm install && npm run build"
+    "build": "hugo --minify"
   },
   "license": "ISC"
 }
