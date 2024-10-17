@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "this is hugo project",
   "scripts": {
-    "dev": "hugo server",
+    "dev": "hugo server -D",
     "build": "hugo --minify"
   },
   "license": "ISC"
